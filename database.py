@@ -3,7 +3,7 @@ import sqlite3
 DATABASE_NAME = "user.db"
 
 def init_db():
-    conn = sqlite3.connect(DATABASE_NAME)
+    conn = sqlite3.connect(DATABASE_NAME, timeout=30)
     cursor = conn.cursor()
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS UserLink (
